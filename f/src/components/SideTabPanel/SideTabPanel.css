@@ -1,0 +1,385 @@
+/* Main container */
+.side-tab-panel {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #e2e2e2, #f9f9f9);
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar */
+.tabs {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #021B79, #0575E6);
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+  transition: width 0.4s ease;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* Sidebar expanded and collapsed states */
+.tabs.expanded {
+  width: 220px;
+}
+
+.tabs.collapsed {
+  width: 85px;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: #ecf0f1;
+}
+
+.tabs.collapsed .sidebar-header {
+  flex-direction: column;
+}
+
+.brand-name1 {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* Toggle button */
+.toggle-button {
+  background: none;
+  border: none;
+  color: #ecf0f1;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.toggle-button:hover {
+  color: #ffffff;
+}
+
+/* Tab styling */
+.tab {
+  padding: 15px 20px;
+  color: #ecf0f1;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.4s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tab.active {
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+}
+
+/* Sub-tabs */
+.contacts-sub-tabs {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Sub-tab styling */
+.sub-tab {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #d0d0d0;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.sub-tab:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.sub-tab.active {
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Sub-tab icon */
+.sub-tab-icon {
+  margin-right: 10px;
+  color: #d0d0d0;
+}
+
+/* Hide sub-tab text in collapsed state */
+.tabs.collapsed .sub-tab .first-letter {
+  display: inline;
+}
+
+.tabs.expanded .sub-tab .first-letter {
+  display: none;
+}
+
+/* Hide full text in collapsed state */
+.tabs.collapsed .sub-tab .full-text {
+  display: none;
+}
+
+.tabs.expanded .sub-tab .full-text {
+  display: inline;
+}
+
+/* Show only icons in collapsed mode */
+.tabs.collapsed .sub-tab {
+  justify-content: center;
+  padding-left: 0; /* Center-align icon in collapsed mode */
+}
+
+.tabs.collapsed .sub-tab-icon {
+  display: inline; /* Show icon in collapsed state */
+}
+
+.tabs.expanded .sub-tab-icon {
+  display: inline; /* Show icon in expanded state as well */
+}
+
+
+
+/* Show and hide text based on expanded/collapsed state */
+.tabs.collapsed .tab .first-letter {
+  display: inline;
+}
+
+.tabs.expanded .tab .first-letter {
+  display: none;
+}
+
+.tabs.collapsed .tab .full-text {
+  display: none;
+}
+
+.tabs.expanded .tab .full-text {
+  display: inline;
+}
+
+/* Adjustments for collapsed state */
+.tabs.collapsed .tab {
+  justify-content: center;
+  font-size: 16px;
+}
+/* Logout Container */
+.logout-container {
+  margin-top: auto;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e2e2e2;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.logout-container:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* Logout Icon */
+.logout-icon {
+  font-size: 20px;
+  color: #e2e2e2;
+  margin-right: 10px; /* Space for text when expanded */
+}
+
+/* Change icon color on hover */
+.logout-container:hover .logout-icon {
+  color: #ffffff;
+}
+
+/* Logout Text */
+.logout-text {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* Hide text when sidebar is collapsed */
+.tabs.collapsed .logout-text {
+  display: none;
+}
+
+/* Profile button container */
+.profile-button-container {
+  position: absolute;
+  top: 15px; /* Reduced top position */
+  right: 15px; /* Reduced right position */
+  background-color: #ecedee;
+  border-radius: 50%;
+  padding: 5px; /* Reduced padding */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Profile button hover effect */
+.profile-button-container:hover {
+  background-color: #acb3ba;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile image styling */
+.profile-icon {
+  width: 40px; /* Reduced width */
+  height: 40px; /* Reduced height */
+  border-radius: 50%;
+  object-fit: cover; /* Ensures the image fits inside the circle */
+  transition: transform 0.3s ease;
+}
+
+/* Profile image hover effect */
+.profile-button-container:hover .profile-icon {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Profile menu container */
+.profile-menu {
+  position: absolute;
+  top: 50px; /* Adjust based on the position of the profile icon */
+  right: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  width: 230px;
+  margin-top: 30px;
+  margin-right: 10px;
+  padding: 10px 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Profile menu items */
+.profile-menu-item {
+  padding: 12px 15px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  width: 100%;
+  text-align: left;
+}
+
+/* Hover effect for menu items */
+.profile-menu-item:hover {
+  background-color: #f1f1f1;
+  color: #021B79;
+}
+
+/* Username styling */
+.username {
+  font-weight: bold;
+  font-size: 18px;
+  color: #003d94;
+  margin-bottom: 5px; /* Space between username and email */
+}
+
+/* Email styling below the username */
+.email {
+  font-size: 14px;
+  color: gray;
+}
+
+/* Content area */
+.content {
+  flex: 1;
+  padding: 40px 50px;
+  background-color: #f9f9f9;
+  height: 100vh;
+  overflow-y: auto;
+  margin-left: 220px;
+  transition: margin-left 0.4s ease;
+}
+
+.tabs.collapsed ~ .content {
+  margin-left: 70px;
+}
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  color: #ecf0f1;
+}
+
+/* Brand name styling */
+.brand-name1 {
+  font-size: 20px; /* Adjust size as desired */
+  font-weight: bold;
+  color: #ffffff;
+  flex-grow: 1; /* Takes full width on the left side */
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+/* Toggle button styling */
+.toggle-button {
+  background: none;
+  margin: 0; /* Adjust font size as needed to match brand name */
+  color: #ecf0f1;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.toggle-button:hover {
+  color: #ffffff;
+}
+
+
+
+/* Campaigns Sub-tabs */
+.campaigns-sub-tabs {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Sub-tab styling */
+.campaigns-sub-tabs .sub-tab {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #d0d0d0;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.campaigns-sub-tabs .sub-tab:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.campaigns-sub-tabs .sub-tab.active {
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Campaigns Sub-tab Icon */
+.campaigns-sub-tabs .sub-tab-icon {
+  margin-right: 10px;
+  color: #d0d0d0;
+}
